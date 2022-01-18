@@ -1,0 +1,17 @@
+{% extends 'mainapp/base.html' %}
+
+{%block title%} Регистрация {% endblock %}
+
+{% block content %}
+
+<form  class = "box"  method="post">
+        {% csrf_token %}
+
+        <h1>Регистрация</h1>
+        {% for f in form %}
+        {{f}}
+        {{f.errors}}
+        {% endfor %}
+        <input type="submit" value="Регистрация">
+    </form>
+{% endblock %}

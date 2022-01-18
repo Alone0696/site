@@ -1,0 +1,13 @@
+{% extends 'mainapp/base.html' %}
+
+{%block title%} Copypasta {% endblock %}
+
+{% block content %}
+<form class = "box_m" method="post" >
+{% csrf_token %}
+<p>Ваш текст,пользователь {{name}}  </p>
+ {{form.text}}
+<input type="submit" value="Сохранить" >
+ <a class="r" href="{% url 'logout' %}" >Выйти</a>
+</form>
+{% endblock %}
